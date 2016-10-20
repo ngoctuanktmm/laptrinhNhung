@@ -35,6 +35,9 @@ LAP
     LDR     R3, [R0]        ; Lay gia tri cua phan tu hien tai
     MOV     R4, R3          ; R4 = R3
     
+    CMP     R4, #0          ; So sanh R4 voi 0
+    BLE     tangCS          ; R4 <= 0 -> tang chi so -> chuyen den phan tu tiep theo
+    
     CMP     R4, #1          ; So sanh R4 voi 1
     BEQ     tangCS          ; R4 == 1 => tang chi so -> den phan tu tiep theo
     
